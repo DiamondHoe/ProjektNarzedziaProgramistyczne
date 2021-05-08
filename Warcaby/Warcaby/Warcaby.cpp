@@ -58,8 +58,15 @@ Begin:
     Plansza[6][0] = A; Plansza[6][2] = A; Plansza[6][4] = A; Plansza[6][6] = A;
     Plansza[7][1] = A; Plansza[7][3] = A; Plansza[7][5] = A; Plansza[7][7] = A;
 
-    Display(Plansza);
+    
+    start:
+        Display(Plansza);
+            cout << "Twoja (" << A << ") Tura";
 
+            cout << endl << "Wybierz pozycje: ( Taka jak: A1, G6, C3 itd. ) ";
+
+    cout << endl;
+    cin >> (pozycja);
     cout << "Zakonczyc?";
     cin >> quit;
     if (quit == "t" || "tak" || "ta") { return 0; }
