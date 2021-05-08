@@ -46,7 +46,7 @@ Begin:
     char sym1p = A;
     char sym2p = B;
 
-    cout <<endl << "Zaczynajmy!" << endl<<endl;
+    cout <<endl << "Zaczynamy!" << endl<<endl;
 
 
 
@@ -59,10 +59,10 @@ Begin:
     Plansza[7][1] = A; Plansza[7][3] = A; Plansza[7][5] = A; Plansza[7][7] = A;
 
     Display(Plansza);
-    
+
     cout << "Zakonczyc?";
     cin >> quit;
     if (quit == "t" || "tak" || "ta") { return 0; }
     else { goto Begin; };
-   
+
 }
