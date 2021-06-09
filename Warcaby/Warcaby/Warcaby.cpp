@@ -23,7 +23,7 @@ int main()
 {
 Begin:
 
-    int i, j, X,Y;
+    int i, j, X, Y, ruch;
     string quit;
     char Plansza[8][8],A,B, pozycja[2];
     for (i = 0; i < 8; i++)
@@ -121,6 +121,12 @@ Begin:
 
         goto start;
     }
+    cout << "W jakim kierunku ruszyc? " << endl;
+    cout << "1 (Lewy gorny rog) , 2 (Prawy gorny rog) " << endl;
+    cout << "3 (Lewy dolny rog) , 4 (Prawy dolny rog) "; cin >> ruch;
+    A = sym1p ;
+    B = sym2p;
+   
     cout << "Zakonczyc?";
     cin >> quit;
     if (quit == "t" || "tak" || "ta") { return 0; }
