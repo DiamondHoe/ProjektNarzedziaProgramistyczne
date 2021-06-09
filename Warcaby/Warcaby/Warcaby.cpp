@@ -21,9 +21,9 @@ void Display(char Board[8][8])
 }
 int main()
 {
-Begin:
+    Begin:
 
-    int i, j, X, Y, ruch;
+    int i, j, X, Y, ruch, gracz1, gracz2;
     string quit;
     char Plansza[8][8],A,B, pozycja[2];
     for (i = 0; i < 8; i++)
@@ -39,7 +39,7 @@ Begin:
     cout << "\n";
     cout << "Jaki symbol ma miec przeciwnik?"; cout << "\n";
     cin >> B;
-    
+
     if (A == B)
     {
         cout << endl << "\t\t" << "Nie mozna wybrać tych samych symboli"<<endl<<endl;
@@ -61,12 +61,12 @@ Begin:
     Plansza[6][0] = A; Plansza[6][2] = A; Plansza[6][4] = A; Plansza[6][6] = A;
     Plansza[7][1] = A; Plansza[7][3] = A; Plansza[7][5] = A; Plansza[7][7] = A;
 
-    
-    start:
-        Display(Plansza);
-            cout << "Twoja (" << A << ") Tura";
 
-            cout << endl << "Wybierz pozycje: ( Taka jak: A1, G6, C3 itd. ) ";
+    start:
+    Display(Plansza);
+    cout << "Twoja (" << A << ") Tura";
+
+    cout << endl << "Wybierz pozycje: ( Taka jak: A1, G6, C3 itd. ) ";
 
 
     cout << endl;
@@ -126,10 +126,221 @@ Begin:
     cout << "3 (Lewy dolny rog) , 4 (Prawy dolny rog) "; cin >> ruch;
     A = sym1p ;
     B = sym2p;
+    if (ruch == 1)
+    {
+        if (X == 0 || Y == 0)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y - 1][X - 1] == A)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y - 1][X - 1] == ' ')
+        {
+            Plansza             [Y][X] = ' ';
+            Plansza[--Y][--X] = A;
+            goto done1;
+        }
+        if (Plansza[Y - 1][X - 1] == B)
+        {
+            if (X <= 1)
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            if (Plansza[Y - 2][X - 2] != ' ')
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            else
+            {
+                Plansza[Y][X] = ' ';
+                Plansza[Y - 1][X - 1] = ' ';
+                Y -= 2; X -= 2;
+                Plansza[Y][X] = A;
+                goto done1;
+            }
+        }
+    }
+
+    // UR Diagonal
+    if (ruch == 2)
+    {
+        if (X == 7 || Y == 0)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y - 1][X + 1] == A)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y - 1][X + 1] == ' ')
+        {
+            Plansza[Y][X] = ' ';
+            Plansza[--Y][++X] = A;
+            goto done1;
+        }
+        if (Plansza[Y - 1][X + 1] == B)
+        {
+            if (X >= 6)
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            if (Plansza[Y - 2][X + 2] != ' ')
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            else
+            {
+                Plansza[Y][X] = ' ';
+                Plansza[Y - 1][X + 1] = ' ';
+                Y -= 2; X += 2;
+                Plansza[Y][X] = A;
+                goto done1;
+            }
+        }
+    }
+
+    // DL Diagonal
+    if (ruch == 3)
+    {
+        if (X == 0 || Y == 7)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y + 1][X - 1] == A)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y + 1][X - 1] == ' ')
+        {
+            Plansza[Y][X] = ' ';
+            Plansza[++Y][--X] = A;
+            goto done1;
+        }
+        if (Plansza[Y + 1][X - 1] == B)
+        {
+            if (X <= 1)
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            if (Plansza[Y + 2][X - 2] != ' ')
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            else
+            {
+                Plansza[Y][X] = ' ';
+                Plansza[Y + 1][X - 1] = ' ';
+                Y += 2; X -= 2;
+                Plansza[Y][X] = A;
+                goto done1;
+            }
+        }
+    }
+
+ 
+    if (ruch == 4)
+    {
+        if (X == 7 || Y == 7)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y + 1][X + 1] == A)
+        {
+            cout << "Token can't move...." << endl;
+
+            goto start;
+        }
+        if (Plansza[Y + 1][X + 1] == ' ')
+        {
+            Plansza[Y][X] = ' ';
+            Plansza[++Y][++X] = A;
+            goto done1;
+        }
+        if (Plansza[Y + 1][X + 1] == B)
+        {
+            if (X >= 6)
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            if (Plansza[Y + 2][X + 2] != ' ')
+            {
+                cout << "Token can't move...." << endl;
+
+                goto start;
+            }
+            else
+            {
+                Plansza[Y][X] = ' ';
+                Plansza[Y + 1][X + 1] = ' ';
+                Y += 2; X += 2;
+                Plansza[Y][X] = A;
+                goto done1;
+            }
+        }
+    }
+    done1:
+    Display(Plansza);
+
+    gracz1 = 0; gracz2 = 0;
+    A = sym1p ;
+    B = sym2p;
+    for (i = 0; i < 8; i++)
+    {
+        for (j = 0; j < 8; j++)
+        {
+            if (Plansza[i][j] == A)
+                gracz1++;
+        }
+    }
+    for (i = 0; i < 8; i++)
+    {
+        for (j = 0; j < 8; j++)
+        {
+            if (Plansza[i][j] == B)
+                gracz2++;
+        }
+    }
    
+        
+
+    
+    cout << endl << "Ruch przeciwnika (" << B << ") Tura........" << endl;
+
+
+
     cout << "Zakonczyc?";
     cin >> quit;
     if (quit == "t" || "tak" || "ta") { return 0; }
-    else { goto Begin; };
+    else  goto start; 
 
 }
