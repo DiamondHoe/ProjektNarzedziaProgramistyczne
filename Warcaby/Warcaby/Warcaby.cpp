@@ -130,13 +130,13 @@ int main()
     {
         if (X == 0 || Y == 0)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
         if (Plansza[Y - 1][X - 1] == A)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
@@ -150,13 +150,13 @@ int main()
         {
             if (X <= 1)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
             if (Plansza[Y - 2][X - 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
@@ -176,13 +176,13 @@ int main()
     {
         if (X == 7 || Y == 0)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
         if (Plansza[Y - 1][X + 1] == A)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
@@ -196,13 +196,13 @@ int main()
         {
             if (X >= 6)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
             if (Plansza[Y - 2][X + 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
@@ -222,13 +222,13 @@ int main()
     {
         if (X == 0 || Y == 7)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
         if (Plansza[Y + 1][X - 1] == A)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
@@ -242,13 +242,13 @@ int main()
         {
             if (X <= 1)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
             if (Plansza[Y + 2][X - 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
@@ -268,13 +268,13 @@ int main()
     {
         if (X == 7 || Y == 7)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
         if (Plansza[Y + 1][X + 1] == A)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start;
         }
@@ -288,13 +288,13 @@ int main()
         {
             if (X >= 6)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
             if (Plansza[Y + 2][X + 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start;
             }
@@ -309,7 +309,7 @@ int main()
         }
     }
     done1:
-    Display(Plansza);
+    
 
     gracz1 = 0; gracz2 = 0;
     A = sym1p ;
@@ -332,7 +332,7 @@ int main()
     }
     goto start2;
 done2:
-    Display(Plansza);
+    
 
     gracz1 = 0; gracz2 = 0;
     A = sym1p;
@@ -429,13 +429,13 @@ done2:
     {
         if (X == 0 || Y == 0)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
         if (Plansza[Y - 1][X - 1] == B)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
@@ -449,13 +449,13 @@ done2:
         {
             if (X <= 1)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
             if (Plansza[Y - 2][X - 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
@@ -475,13 +475,13 @@ done2:
     {
         if (X == 7 || Y == 0)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
         if (Plansza[Y - 1][X + 1] == B)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
@@ -495,13 +495,13 @@ done2:
         {
             if (X >= 6)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
             if (Plansza[Y - 2][X + 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
@@ -521,13 +521,13 @@ done2:
     {
         if (X == 0 || Y == 7)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
         if (Plansza[Y + 1][X - 1] == B)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
@@ -541,13 +541,13 @@ done2:
         {
             if (X <= 1)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
             if (Plansza[Y + 2][X - 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
@@ -567,13 +567,13 @@ done2:
     {
         if (X == 7 || Y == 7)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
         if (Plansza[Y + 1][X + 1] == B)
         {
-            cout << "Token can't move...." << endl;
+            cout << "Nie mozesz tak ruszyc." << endl;
 
             goto start2;
         }
@@ -587,13 +587,13 @@ done2:
         {
             if (X >= 6)
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
             if (Plansza[Y + 2][X + 2] != ' ')
             {
-                cout << "Token can't move...." << endl;
+                cout << "Nie mozesz tak ruszyc." << endl;
 
                 goto start2;
             }
