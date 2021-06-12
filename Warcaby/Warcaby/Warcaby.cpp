@@ -5,9 +5,10 @@
 using namespace std;
 
 
-void wyswietl(char[8][8]);
-void wyswietl(char Board[8][8])
+void Display(char[8][8]);
+void Display(char Board[8][8])
 {
+
 
     int i;
     for (i = 0; i < 8; i++)
@@ -30,18 +31,18 @@ int main()
         for (j = 0; j < 8; j++)
             Plansza[i][j] = ' ';
     }
-    cout << "Witaj w grze w Warcaby!" << endl;
+    cout << "Witaj w grze w warcaby!" << endl;
     cout << "Zasady sa proste:" << endl;
     cout << "Kto straci wszystkie pionki przegrywa!" << endl << endl;
     cout << "Jakim symbolem chcesz grac? ";  cout << "\n";
     cin >> A;
     cout << "\n";
-    cout << "Jakim symbolem chce grac przeciwnik?"; cout << "\n";
+    cout << "Jaki symbol ma miec przeciwnik?"; cout << "\n";
     cin >> B;
 
     if (A == B)
     {
-        cout << endl << "\t\t" << "Nie mozna wybrac takich samych symboli!"<<endl<<endl;
+        cout << endl << "\t\t" << "Nie mozna wybrać tych samych symboli"<<endl<<endl;
 
         goto Begin;
     }
@@ -49,6 +50,7 @@ int main()
     char sym2p = B;
 
     cout <<endl << "Zaczynamy!" << endl<<endl;
+
 
 
     Plansza[0][0] = B; Plansza[0][2] = B; Plansza[0][4] = B; Plansza[0][6] = B;
@@ -59,11 +61,12 @@ int main()
     Plansza[6][0] = A; Plansza[6][2] = A; Plansza[6][4] = A; Plansza[6][6] = A;
     Plansza[7][1] = A; Plansza[7][3] = A; Plansza[7][5] = A; Plansza[7][7] = A;
 
+
     start:
-    wyswietl(Plansza);
+    Display(Plansza);
     cout << "Twoja (" << A << ") Tura";
 
-    cout << endl << "Wybierz pozycje: (Taka jak: B5, D4 itd.) ";
+    cout << endl << "Wybierz pozycje: ( Taka jak: A1, G6, C3 itd. ) ";
 
 
     cout << endl;
@@ -127,13 +130,13 @@ int main()
     {
         if (X == 0 || Y == 0)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
         if (Plansza[Y - 1][X - 1] == A)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
@@ -147,13 +150,13 @@ int main()
         {
             if (X <= 1)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
             if (Plansza[Y - 2][X - 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
@@ -168,17 +171,18 @@ int main()
         }
     }
 
+    // UR Diagonal
     if (ruch == 2)
     {
         if (X == 7 || Y == 0)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
         if (Plansza[Y - 1][X + 1] == A)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
@@ -192,13 +196,13 @@ int main()
         {
             if (X >= 6)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
             if (Plansza[Y - 2][X + 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
@@ -213,17 +217,18 @@ int main()
         }
     }
 
+    // DL Diagonal
     if (ruch == 3)
     {
         if (X == 0 || Y == 7)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
         if (Plansza[Y + 1][X - 1] == A)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
@@ -237,13 +242,13 @@ int main()
         {
             if (X <= 1)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
             if (Plansza[Y + 2][X - 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
@@ -258,18 +263,18 @@ int main()
         }
     }
 
-
+ 
     if (ruch == 4)
     {
         if (X == 7 || Y == 7)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
         if (Plansza[Y + 1][X + 1] == A)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start;
         }
@@ -283,13 +288,13 @@ int main()
         {
             if (X >= 6)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
             if (Plansza[Y + 2][X + 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start;
             }
@@ -304,7 +309,7 @@ int main()
         }
     }
     done1:
-    wyswietl(Plansza);
+    Display(Plansza);
 
     gracz1 = 0; gracz2 = 0;
     A = sym1p ;
@@ -327,7 +332,7 @@ int main()
     }
     goto start2;
 done2:
-    wyswietl(Plansza);
+    Display(Plansza);
 
     gracz1 = 0; gracz2 = 0;
     A = sym1p;
@@ -350,16 +355,16 @@ done2:
         }
     }
     goto start;
+   
+        
 
-
-
-
+    
     cout << endl << "Ruch przeciwnika (" << B << ") Tura........" << endl;
-   start2:
-       wyswietl(Plansza);
+   start2: 
+       Display(Plansza);
     cout << "Twoja (" << B << ") Tura";
 
-    cout << endl << "Wybierz pozycje: (Taka jak: B5, D4 itd.) ";
+    cout << endl << "Wybierz pozycje: ( Taka jak: A1, G6, C3 itd. ) ";
     cin >> (pozycja);
     if (pozycja[0] == 'A')
         X = 0;
@@ -415,7 +420,7 @@ done2:
 
 
     cout << endl;
-    cout << "W jakim kierunku chcesz sie ruszyc? " << endl;
+    cout << "W jakim kierunku ruszyc? " << endl;
     cout << "1 (Lewy gorny rog) , 2 (Prawy gorny rog) " << endl;
     cout << "3 (Lewy dolny rog) , 4 (Prawy dolny rog) "; cin >> ruch;
     A = sym1p;
@@ -424,13 +429,13 @@ done2:
     {
         if (X == 0 || Y == 0)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
         if (Plansza[Y - 1][X - 1] == B)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
@@ -444,13 +449,13 @@ done2:
         {
             if (X <= 1)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
             if (Plansza[Y - 2][X - 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
@@ -470,13 +475,13 @@ done2:
     {
         if (X == 7 || Y == 0)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
         if (Plansza[Y - 1][X + 1] == B)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
@@ -490,13 +495,13 @@ done2:
         {
             if (X >= 6)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
             if (Plansza[Y - 2][X + 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
@@ -516,13 +521,13 @@ done2:
     {
         if (X == 0 || Y == 7)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
         if (Plansza[Y + 1][X - 1] == B)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
@@ -536,13 +541,13 @@ done2:
         {
             if (X <= 1)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
             if (Plansza[Y + 2][X - 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
@@ -562,13 +567,13 @@ done2:
     {
         if (X == 7 || Y == 7)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
         if (Plansza[Y + 1][X + 1] == B)
         {
-            cout << "Niedozwolony ruch" << endl;
+            cout << "Token can't move...." << endl;
 
             goto start2;
         }
@@ -582,13 +587,13 @@ done2:
         {
             if (X >= 6)
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
             if (Plansza[Y + 2][X + 2] != ' ')
             {
-                cout << "Niedozwolony ruch" << endl;
+                cout << "Token can't move...." << endl;
 
                 goto start2;
             }
@@ -608,6 +613,6 @@ done2:
     cout << "Zakonczyc?";
     cin >> quit;
     if (quit == "t" || "tak" || "ta") { return 0; }
-    else  goto start;
+    else  goto start; 
 
 }
