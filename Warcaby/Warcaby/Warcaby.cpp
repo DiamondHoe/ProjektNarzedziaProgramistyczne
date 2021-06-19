@@ -171,7 +171,7 @@ int main()
         }
     }
 
-    // UR Diagonal
+    
     if (ruch == 2)
     {
         if (X == 7 || Y == 0)
@@ -217,7 +217,7 @@ int main()
         }
     }
 
-    // DL Diagonal
+  
     if (ruch == 3)
     {
         if (X == 0 || Y == 7)
@@ -470,7 +470,7 @@ done2:
         }
     }
 
-    // UR Diagonal
+ 
     if (ruch == 2)
     {
         if (X == 7 || Y == 0)
@@ -516,7 +516,7 @@ done2:
         }
     }
 
-    // DL Diagonal
+  
     if (ruch == 3)
     {
         if (X == 0 || Y == 7)
